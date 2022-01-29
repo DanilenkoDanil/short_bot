@@ -1,0 +1,14 @@
+[Unit]
+Description=Telegram Bot
+After=network.target
+
+[Service]
+User=short_bot
+Group=short_bot
+
+WorkingDirectory=/home/short_bot/short_bot/
+Environment="PYTHONPATH=/home/short_bot/short_bot/"
+ExecStart=/home/short_bot/short_bot/.venv/bin/python /home/short_bot/short_bot/my.py
+
+[Install]
+WantedBy=multi-user.target
